@@ -1,0 +1,129 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+  color: #222;
+}
+
+/* Resume Container */
+.resume-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Glass Cards */
+.card.glass, .timeline-item.glass, .header-card {
+  position: relative;
+  border-radius: 14px;
+  padding: 20px;
+  background: rgba(255, 255, 255, .85);
+  backdrop-filter: blur(24px);
+  box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
+  overflow: hidden;
+}
+
+.card h3, .timeline h3 {
+  margin-top: 0;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 6px;
+  color: #2c3e50;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+.skills-list li {
+  margin: 8px 0;
+  padding: 6px 10px;
+  background: #eef6ff;
+  border-radius: 6px;
+}
+
+/* HEADER */
+.header-card {
+  text-align: center;
+  padding: 40px 20px;
+}
+.header-card .name {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.2;
+}
+.header-card .title {
+  font-size: 1.3rem;
+  color: #7f8c8d;
+  margin-top: 10px;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 4px;
+  height: 100%;
+  background: #3498db;
+  border-radius: 2px;
+}
+.timeline-item {
+  margin-bottom: 30px;
+  padding: 20px;
+}
+.timeline-item .date {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #3498db;
+}
+
+/* Blob animation */
+.blob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #4305a6;
+  opacity: 0.3;
+  filter: blur(40px);
+  animation: blob-bounce 6s infinite ease-in-out;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+@keyframes blob-bounce {
+  0% { transform: translate(-50%, -50%) translate3d(0, 0, 0); }
+  25% { transform: translate(-50%, -50%) translate3d(100px, 0, 0); }
+  50% { transform: translate(-50%, -50%) translate3d(100px, 100px, 0); }
+  75% { transform: translate(-50%, -50%) translate3d(0, 100px, 0); }
+  100% { transform: translate(-50%, -50%) translate3d(0, 0, 0); }
+}
+
+/* Links */
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-card .name { font-size: 2.2rem; }
+  .resume-container { padding: 10px; }
+}
