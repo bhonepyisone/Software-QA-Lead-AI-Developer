@@ -1,129 +1,118 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: 'Lato', sans-serif;
-  background: #f0f2f5;
-  margin: 0;
-  padding: 20px;
-  color: #222;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #7851a9, #4b2d72);
+  color: #111;
+  line-height: 1.6;
 }
 
-/* Resume Container */
-.resume-container {
-  max-width: 1200px;
-  margin: auto;
+/* Hero */
+.hero {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3rem 2rem;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(18px);
 }
 
-/* Glass Cards */
-.card.glass, .timeline-item.glass, .header-card {
-  position: relative;
-  border-radius: 14px;
-  padding: 20px;
-  background: rgba(255, 255, 255, .85);
-  backdrop-filter: blur(24px);
-  box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
-  overflow: hidden;
-}
-
-.card h3, .timeline h3 {
-  margin-top: 0;
-  border-bottom: 2px solid #3498db;
-  padding-bottom: 6px;
-  color: #2c3e50;
-}
-
-.skills-list {
-  list-style: none;
-  padding: 0;
-}
-.skills-list li {
-  margin: 8px 0;
-  padding: 6px 10px;
-  background: #eef6ff;
-  border-radius: 6px;
-}
-
-/* HEADER */
-.header-card {
-  text-align: center;
-  padding: 40px 20px;
-}
-.header-card .name {
-  font-size: 3rem;
-  font-weight: 900;
-  margin: 0;
-  line-height: 1.2;
-}
-.header-card .title {
-  font-size: 1.3rem;
-  color: #7f8c8d;
-  margin-top: 10px;
-}
-
-/* Timeline */
-.timeline {
-  position: relative;
-  padding-left: 30px;
-}
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 10px;
-  width: 4px;
-  height: 100%;
-  background: #3498db;
-  border-radius: 2px;
-}
-.timeline-item {
-  margin-bottom: 30px;
-  padding: 20px;
-}
-.timeline-item .date {
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #3498db;
-}
-
-/* Blob animation */
-.blob {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.profile-pic {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background-color: #4305a6;
-  opacity: 0.3;
-  filter: blur(40px);
-  animation: blob-bounce 6s infinite ease-in-out;
-  transform: translate(-50%, -50%);
-  z-index: -1;
+  object-fit: cover;
+  border: 4px solid #fff;
 }
 
-@keyframes blob-bounce {
-  0% { transform: translate(-50%, -50%) translate3d(0, 0, 0); }
-  25% { transform: translate(-50%, -50%) translate3d(100px, 0, 0); }
-  50% { transform: translate(-50%, -50%) translate3d(100px, 100px, 0); }
-  75% { transform: translate(-50%, -50%) translate3d(0, 100px, 0); }
-  100% { transform: translate(-50%, -50%) translate3d(0, 0, 0); }
+.name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
 }
 
-/* Links */
-a {
-  color: #3498db;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+.title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin: 0.5rem 0;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .header-card .name { font-size: 2.2rem; }
-  .resume-container { padding: 10px; }
+.tagline {
+  color: #ddd;
+  max-width: 600px;
+}
+
+/* Glass Card */
+.card.glass, .timeline-item.glass, .footer.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin: 1rem;
+  box-shadow: 8px 8px 20px rgba(0,0,0,0.2),
+              -8px -8px 20px rgba(255,255,255,0.05);
+}
+
+/* Sections */
+.about, .edu-vol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.skills li {
+  margin: 0.3rem 0;
+}
+
+.timeline {
+  padding: 2rem;
+}
+
+.timeline h2, .projects h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.timeline-item {
+  margin-bottom: 1.5rem;
+}
+
+.company {
+  font-size: 0.9rem;
+  color: #eee;
+}
+
+/* Projects */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.projects-left {
+  flex: 1;
+  min-width: 280px;
+}
+
+.projects-right {
+  flex: 1;
+  max-width: 400px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  color: #fff;
+  margin-top: 2rem;
+  padding: 1rem;
 }
